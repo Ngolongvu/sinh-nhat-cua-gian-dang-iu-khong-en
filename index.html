@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Có một món quà nhỏ đang chờ bạn 🎂</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="confetti"></canvas>
+<div id="glow"></div>
+
+<!-- MÀN 0: BẬT ĐÈN (NỀN TỐI + CHỮ LE LÓI) -->
+<section class="stage on" id="s0">
+  <button class="switch" id="lightBtn" aria-label="Bật đèn">💡</button>
+  <h1>Có một món quà nhỏ đang chờ bạn</h1>
+  <p>Căn phòng đang tối. Chạm vào bóng đèn nhé.</p>
+</section>
+
+<!-- MÀN 1: THỔI NẾN -->
+<section class="stage" id="s1">
+  <h1>Thổi nến nào, <span class="nm"></span> 🎂</h1>
+  <div class="cake" id="cake">
+    <div class="flame"></div><div class="candle"></div>
+    <div class="tier t2"><i class="drip"></i></div>
+    <div class="tier t1"><i class="drip"></i></div>
+    <div class="plate"></div>
+    <div class="smoke"></div>
+  </div>
+  <p>Nhắm mắt lại, ước một điều, rồi thổi nến.</p>
+  <div class="row">
+    <button id="blowBtn">Thổi nến 🌬️</button>
+    <button class="ghost" id="micBtn">Thổi bằng micro 🎤</button>
+  </div>
+</section>
+
+<!-- MÀN 2: MỞ QUÀ -->
+<section class="stage" id="s2">
+  <h1 id="wish"></h1>
+  <p>Điều ước của bạn đã được gửi đi.</p>
+  <button id="openBtn">Mở quà 🎁</button>
+</section>
+
+<!-- MÀN 3: LỜI CHÚC -->
+<section class="stage" id="s3">
+  <div class="container">
+    <h1 id="title"></h1>
+    <p class="hint">Chạm vào từng thẻ để xem điều bất ngờ nhỏ bên trong.</p>
+    <div id="reasons-container"></div>
+    <button class="shuffle-button" id="nextBtn">Bấm vào đây… 💕</button>
+    <div class="reason-counter" id="counter"></div>
+  </div>
+</section>
+
+<!-- MÀN 4: KỶ NIỆM (ẢNH & LỜI CHÚC LẦN LƯỢT) -->
+<section class="stage" id="s4">
+  <div class="sparkles"></div>
+  <div class="hearts" id="hearts"></div>
+
+  <section class="welcome">
+    <h1>Những khoảnh khắc đẹp của chúng ta</h1>
+    <p>Chạm vào nút bên dưới để mở từng kỷ niệm quý giá nhé…</p>
+  </section>
+
+  <!-- Nơi hiển thị các thẻ ảnh lần lượt -->
+  <div class="memory-container" id="memories"></div>
+
+  <!-- Nút bấm chạm để mở ảnh tiếp theo -->
+  <button class="shuffle-button" id="nextMemoryBtn">Xem kỷ niệm 💕</button>
+
+  <!-- Lời chúc cuối (ẩn ban đầu, hiện ra sau khi mở hết 3 ảnh) -->
+  <section class="final" id="finalSection" style="display: none;">
+    <h2 id="ft"></h2>
+    <div id="fx"></div>
+    <button id="replayBtn" class="goodbye-btn">Thổi nến lại 🎂</button>
+  </section>
+</section>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
